@@ -1,0 +1,32 @@
+#!/usr/bin/expect
+spawn ./tarscripteap.sh
+set pass "A0685d89"
+
+expect {
+        "*assword:" {send "$pass\r" ; exp_continue}
+
+}
+spawn ./tarscriptews.sh
+set pass "A0685d89"
+
+expect {
+        "*assword:" {send "$pass\r" ; exp_continue}
+
+}
+spawn ./scpscripteap.sh
+set pass "A0685d89"
+
+expect {
+        "*assword:" {send "$pass\r" ; exp_continue}
+
+
+}
+spawn ./scpscriptews.sh
+set pass "A0685d89"
+
+expect {
+        "*assword:" {send "$pass\r" ; exp_continue}
+
+        eof exit
+}
+
